@@ -232,13 +232,16 @@ function ArticleDetail() {
       {article.medias.length === 0 && <p className="empty">Aucun média.</p>}
       {article.medias.map((media) => {
         const isVideo = /\.(mp4|mov|webm)$/i.test(media.url);
+        const isAudio = /\.(mp3|wav|ogg|m4a)$/i.test(media.url);
         return (
           <div key={media.id} className="media">
             <p>{media.nom}</p>
             {isVideo ? (
-              <video src={`http://localhost:8000${media.url}`} controls style={{ maxWidth: "100%", borderRadius: "8px" }} />
+              <video src={`https://kennethblogapi.onrender.com${media.url}`} controls style={{ maxWidth: "100%", borderRadius: "8px" }} />
+            ) : isAudio ? (
+              <audio src={`https://kennethblogapi.onrender.com${media.url}`} controls style={{ width: "100%" }} />
             ) : (
-              <img src={`http://localhost:8000${media.url}`} alt={media.nom} style={{ maxWidth: "100%", borderRadius: "8px" }} />
+              <img src={`https://kennethblogapi.onrender.com${media.url}`} alt={media.nom} style={{ maxWidth: "100%", borderRadius: "8px" }} />
             )}
           </div>
         );

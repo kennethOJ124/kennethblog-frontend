@@ -42,7 +42,7 @@ function MediaUploadForm() {
         <label>Fichier image</label>
         <input
           type="file"
-          accept="image/*,video/*"
+          accept="image/*,video/*,audio/*"
           onChange={(e) => setFichier(e.target.files[0])}
           required
         />

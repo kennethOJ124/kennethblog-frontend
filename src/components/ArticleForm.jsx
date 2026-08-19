@@ -157,7 +157,7 @@ function ArticleForm() {
               />
               <input
                 type="file"
-                accept="image/*,video/*"
+                accept="image/*,video/*,audio/*"
                 onChange={(e) => setMediaFichier(e.target.files[0])}
               />
             </>
